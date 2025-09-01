@@ -24,7 +24,7 @@
         <label>Stock Quantity: </label>
         <input type="number" name="stock_quantity" min="0" required><br>
         <label>Expiration Date: </label>
-        <input type="number" name="price" step="0.01" required><br>
+        <input type="date" name="expiration_date" step="0.01" required><br>
         <label>Status: </label>
         <input type="radio" name="status" value="active" checked> Active<br>
         <input type="radio" name="status" value="inactive" checked> Inactive<br>
