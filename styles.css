@@ -1,0 +1,133 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f1f3f6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #2d3436;
+  color: white;
+  padding: 15px 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+}
+
+.card h2 {
+  margin: 0 0 20px;
+  font-size: 24px;
+  color: #2d3436;
+  text-align: center;
+}
+form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+input[type="radio"] {
+  margin-right: 6px;
+}
+
+.radio-group {
+  margin-bottom: 10px;
+}
+
+p.error {
+  color: #e74c3c;
+  font-size: 13px;
+  margin: -5px 0 10px 0;
+}
+
+input[type="submit"] {
+  background: #0984e3;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background: #065a9e;
+}
+
+.form-row {
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+  width: 100%;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+}
+.form-row .col {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #666;
+  margin-top: 40px;
+}
+.status-content {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.status-content h3 {
+  color: #0984e3;
+  font-size: 22px;
+  margin: 20px 0;
+  font-weight: 600;
+}
+
+.status-content h4 {
+  color: #666;
+  font-size: 18px;
+  margin: 15px 0;
+  font-weight: normal;
+}

@@ -77,7 +77,7 @@
 
         // Redirect only if no errors
         if(!$has_error) {
-            header("Location: viewProduct.php");
+            header("Location: redirect.php");
             exit();
         }
     }
@@ -87,43 +87,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forms</title>
+    <title>Product Registration | MyShop</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form method="post">
+    <!-- When the GET method is used, the data entered in the input fields appears in the URL as a query string. In contrast, with the POST method, the data entered in the input fields is not visible in the URL after the form is submitted. -->
+    <header>
+        MyShop Admin Panel
+    </header>
+    <div class="container">
+        <div class="card">
+            <h2>Product Registration</h2>
+            <form method="post">
 
-        <label>Product Name</label><br>
-        <input type="text" name="product_name" value="<?php echo htmlspecialchars($product_name); ?>"><br>
-        <p style="color: red; margin: 0;"><?php echo $product_name_error; ?></p><br>
+                <div class="form-field">
+                    <label>Product Name</label>
+                     <input type="text" name="product_name" value="<?php echo htmlspecialchars($product_name); ?>">
+                     <p class="error"><?php echo $product_name_error; ?></p>
+                </div>
 
-        <label>Category</label>
-        <select name="category">
-            <option value="">-- Select Category --</option>
-            <option value="Category A" <?php if($product_category=="Category A") echo "selected"; ?>>Category A</option>
-            <option value="Category B" <?php if($product_category=="Category B") echo "selected"; ?>>Category B</option>
-            <option value="Category C" <?php if($product_category=="Category C") echo "selected"; ?>>Category C</option>
-            <option value="Category D" <?php if($product_category=="Category D") echo "selected"; ?>>Category D</option>
-        </select><br>
-        <p style="color: red; margin: 0;"><?php echo $product_category_error; ?></p> <br>
+                <div class="form-field">
+                    <label>Category</label>
+                    <select name="category">
+                        <option value="">-- Select Category --</option>
+                        <option value="Category A" <?php if($product_category=="Category A") echo "selected"; ?>>Category A</option>
+                        <option value="Category B" <?php if($product_category=="Category B") echo "selected"; ?>>Category B</option>
+                        <option value="Category C" <?php if($product_category=="Category C") echo "selected"; ?>>Category C</option>
+                        <option value="Category D" <?php if($product_category=="Category D") echo "selected"; ?>>Category D</option>
+                    </select>
+                    <p class="error"><?php echo $product_category_error; ?></p>
+                </div>
 
-        <label>Price (&#8369;): </label>
-        <input type="number" name="price" step="0.01" value="<?php echo htmlspecialchars($product_price); ?>"><br>
-        <p style="color: red; margin: 0;"><?php echo $product_price_error; ?></p><br>
+                <div class="form-row">
+                    <div class="col">
+                        <label>Price (&#8369;):</label>
+                        <input type="number" name="price" step="0.01" value="<?php echo htmlspecialchars($product_price); ?>">
+                        <p class="error"><?php echo $product_price_error; ?></p>
+                    </div>
 
-        <label>Stock Quantity: </label>
-        <input type="number" name="stock_quantity" min="0" value="<?php echo htmlspecialchars($product_stock_number); ?>"><br>
-        <p style="color: red; margin: 0;"><?php echo $product_stock_number_error; ?></p><br>
+                    <div class="col">
+                        <label>Stock Quantity:</label>
+                        <input type="number" name="stock_quantity" min="0" value="<?php echo htmlspecialchars($product_stock_number); ?>">
+                        <p class="error"><?php echo $product_stock_number_error; ?></p>
+                    </div>
+                </div>
 
-        <label>Expiration Date: </label>
-        <input type="date" name="expiration_date" value="<?php echo htmlspecialchars($product_expiration_date); ?>"><br>
-        <p style="color: red; margin: 0;"><?php echo $product_expiration_date_error; ?></p><br>
+                <div class="form-field">
+                    <label>Expiration Date:</label>
+                    <input type="date" name="expiration_date" value="<?php echo htmlspecialchars($product_expiration_date); ?>">
+                    <p class="error"><?php echo $product_expiration_date_error; ?></p>
+                </div>
+                <label>Status:</label>
+                <div class="radio-group">
+                    <input type="radio" name="status" value="active" <?php if($product_status=="active") echo "checked"; ?>> Active
+                    <input type="radio" name="status" value="inactive" <?php if($product_status=="inactive") echo "checked"; ?>> Inactive
+                </div>
+                <p class="error"><?php echo $product_status_error; ?></p>
 
-        <label>Status: </label><br>
-        <input type="radio" name="status" value="active" <?php if($product_status=="active") echo "checked"; ?>> Active<br>
-        <input type="radio" name="status" value="inactive" <?php if($product_status=="inactive") echo "checked"; ?>> Inactive<br>
-        <p style="color: red; margin: 0;"><?php echo $product_status_error; ?></p><br>
+                <input type="submit" value="Save Product">
+            </form>
+        </div>
+    </div>
 
-        <input type="submit" value="Save Product">
-    </form>
+    <footer>
+        &copy; <?php echo date("Y"); ?> MyShop | Product Management System
+    </footer>
 </body>
 </html>
