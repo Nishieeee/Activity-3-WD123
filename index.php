@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- When the GET method is used, the data entered in the input fields appears in the URL as a query string. In contrast, with the POST method, the data entered in the input fields is not visible in the URL after the form is submitted. -->
-    <form action="" method="get">
+    <form action="viewProduct.php" method="post">
         <label>Product Name</label><br>
         <input type="text" name="product_name" required><br>
         <label>Category</label>
